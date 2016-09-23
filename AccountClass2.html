@@ -1,0 +1,64 @@
+<html>
+<head>
+<script type = "text/javascript">
+	function Account(type, num, lName, fName, bal) {
+		this.acctType = type;
+		this.acctNumber = num;
+		this.lastName = lName;
+		this.firstName = fName;
+		this.acctBal = bal;
+		this.deposit = deposit;
+		this.withdraw = withdraw;
+		this.changeName = changeName;
+		this.inquire = inquire;
+		this.displayInfo = displayInfo;
+	}
+
+	function deposit(amt) {
+		this.acctBal = this.acctBal + amt;
+		document.write("New balance: $" + this.acctBal + BR);
+	}
+
+	function withdraw(amt) {
+		this.acctBal = this.acctBal - amt;
+		document.write("New balance: $" + this.acctBal + BR);
+	}
+
+	function changeName(lName, fName) {
+		this.lastName = lName;
+		this.firstName = fName;
+		document.write("The name has been changed to "
+			+ this.firstName + " " + this.lastName + BR);
+	}
+
+	function inquire() {
+		document.write("Balance: $" + this.acctBal + BR);
+	}
+
+	function displayInfo() {
+		document.write("Account type: " + this.acctType + BR);
+		document.write("Account #: " + this.acctNumber + BR);
+		document.write("Last Name: " + this.lastName + BR);
+		document.write("First Name: " + this.firstName + BR);
+		document.write("Balance $: " + this.acctBal + BR);
+	}
+</script>
+</head>
+<body>
+<script type = "text/javascript">
+	var BR = "<br />";
+
+	document.write("Account program." + BR);
+	document.write("This program creates an account." + BR);
+	document.write("It also modifies the account." + BR);
+
+	var mySavingsAcct = new Account("S", 1376433, "Dunes", "Sandi", 80.00);
+	mySavingsAcct.deposit(100.00);
+	mySavingsAcct.withdraw(50.00);
+	mySavingsAcct.inquire();
+	mySavingsAcct.displayInfo();
+
+	document.write("Thank you!" + BR);
+</script>
+</body>
+</html>
