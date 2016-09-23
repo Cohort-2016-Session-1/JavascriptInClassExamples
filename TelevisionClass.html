@@ -19,11 +19,18 @@
         }
 
         function setValues(manufac, diag, price) {
-
+            //Update object properties
+            this.manufacturer = manufac;
+            this.diagonalSize = diag;
+            this.retailPrice = price;
         }
 
         function displayInfo() {
-
+            //Output properties
+            document.tvform.newPrice.value = this.retailPrice;
+            document.tvform.newSize.value = this.diagonalSize;
+            document.tvform.newManufacturer.value =
+                    this.manufacturer;
         }
 
         function clearValues() {
@@ -47,7 +54,7 @@
     <input type="button" value="set values" name="setVal"
            onclick="" size="20"/><br>
     <input type="button" value="get values" name="getVal"
-           onclick="" size="20"/><br>
+           onclick="myFirstTV.displayInfo()" size="20"/><br>
     <input type="button" value="clear values" name="clearVal"
            onclick="myFirstTV.clearValues();" size="20"/>
 
@@ -57,8 +64,13 @@
     //Create an "instance" of a Television:
     var myFirstTV = new Television("Sony", 52, 999.99);
 
+    //Create another instance:
     var myNextTV = new Television("", 0, 0);
     myNextTV.setValues("LG", 55, 1099.99);
+
+    //myNextTV.displayInfo();
+    myFirstTV.displayInfo();
+
 </script>
 
 </body>
