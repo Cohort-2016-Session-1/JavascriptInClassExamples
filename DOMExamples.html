@@ -36,14 +36,17 @@
     document.write(document.forms.length + BR);
 
     var x = document.getElementsById("Form2");
+    for (var i = 0; i < x.length; i++)
+    {
+        document.write(x.elements[i].value);
+        document.write(BR);
+    }
 
-    
+    /*var w = window.open();
+    w.document.open();
+    w.document.write("<h3>Howdy!</h3>");*/
 
-
-
-
-
-
+    window.location.href = "http://www.w3schools.com";
 </script>
 </body>
 </html>
