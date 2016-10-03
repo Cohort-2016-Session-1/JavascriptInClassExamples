@@ -34,7 +34,7 @@
         }
 
         //Process
-        //Use a DUAL OUTCOME IF STATEMENT:
+/*        //Use a DUAL OUTCOME IF STATEMENT:
         if (level <= 0) {
             //Invalid input
             message = "Invalid input, try again";
@@ -59,7 +59,7 @@
             else { //default
                 message = "Level dangerously high";
             } //end if/else/if
-
+*/
 /*            //NESTED IFS
             if (level <=1200) {
                 if (level <= 1100) {
@@ -84,6 +84,23 @@
             } //<=1200
 */
 
+        switch (true) {
+            case (level < 800) :
+                message = "Level is dangerously low";
+                break;
+            case (level < 900) :
+                message = "Level is moderately low";
+                break;
+            case (level <= 1100) :
+                message = "Level is acceptable";
+                break;
+            case (level <= 1200) :
+                message = "Level is moderately high";
+                break;
+            default : //default is optional for switch
+                message = "Level is dangerously high";
+                break;
+        } //end switch
 
 
         } //end else
